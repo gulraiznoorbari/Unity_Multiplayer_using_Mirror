@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using UnityStandardAssets.Characters.FirstPerson;
@@ -8,7 +6,6 @@ public class NetworkController : NetworkBehaviour
 {
     public FirstPersonController fpsController;
     public Camera playerCam;
-    //public GameObject _playerCameraRoot;
    
     void Start()
     {
@@ -17,10 +14,7 @@ public class NetworkController : NetworkBehaviour
         {
             fpsController.enabled = false;
             playerCam.enabled = false;
+            playerCam.GetComponent<AudioListener>().enabled = false;
         }
-    }
-
-    void Update()
-    {
     }
 }
